@@ -119,28 +119,6 @@ public class MACGenerator {
 		return formattedDate;
 	}
 
-	/**
-	 * 
-	 * @param str
-	 * @param length
-	 * @param car
-	 * @return
-	 */
-	public static String lPad(String str, Integer length, char car) {
-		return (str + String.format("%" + length + "s", "").replace(" ", String.valueOf(car))).substring(0, length);
-	}
-
-	/**
-	 * 
-	 * @param str
-	 * @param length
-	 * @param car
-	 * @return
-	 */
-	public static String rPad(String str, Integer length, char car) {
-		return (String.format("%" + length + "s", "").replace(" ", String.valueOf(car)) + str).substring(str.length(),
-				length + str.length());
-	}
 
 	/**
 	 * 
@@ -190,19 +168,6 @@ public class MACGenerator {
 		return bytes;
 	}
 
-	/**
-	 * 
-	 * @param args
-	 * @throws DecoderException
-	 */
-	public static void main(String[] args) throws DecoderException {
-		MACGenerator macg = new MACGenerator("7367523e34564a2461347470463e383659333836266d6f552b7326443b3b3334");
 
-		byte[] tablica = macg.tokenize("7367523e34564a2461347470463e383659333836266d6f552b7326443b3b3334", true);
-		for (byte b : tablica) {
-			System.out.println("-> " + b);
-		}
-
-	}
 
 }
