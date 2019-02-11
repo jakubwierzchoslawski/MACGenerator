@@ -14,11 +14,11 @@
 
 	public static void main(String[] args) throws Exception {
 		
-		MACGenerator gen = new MACGenerator("7367523e34564a2461347470463e383659333836266d6f552b7326443b3b3334");
-		String ccid = "Metropolis";
-		String uuid = "302345612";
-		String date = "2/5/2019 8:48:15 AM";
-		String message = "METROPOLIS02/05/2019302345612";
+		MACGenerator gen = new MACGenerator("");
+		String ccid = "";
+		String uuid = "";
+		String date = "";
+		String message = "";
 		
 		System.out.println("-----------");
 		//System.out.println("SHA256: " + gen.encodeMessage(MACAlgorithms.ENCODING_STRENGTH_SHA256, ccid, uuid, date));
