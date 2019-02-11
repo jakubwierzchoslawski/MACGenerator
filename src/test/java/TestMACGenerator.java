@@ -10,12 +10,14 @@ public class TestMACGenerator {
 		String uuid = "302345612";
 		String date = "2/11/2019 8:48:15 AM";
 		String message = "METROPOLIS02/11/2019302345612";
+		String message2 = "302345612METROPOLIS";
+		boolean isHex = true;
 		
 		System.out.println("-----------");
 		//System.out.println("SHA256: " + gen.encodeMessage(MACAlgorithms.ENCODING_STRENGTH_SHA256, ccid, uuid, date));
 		//System.out.println("SHA512: " + gen.encodeMessage(MACAlgorithms.ENCODING_STRENGTH_SHA512, ccid, uuid, date));
-		System.out.println("MD5 full message: " + gen.encodeMessage(MACAlgorithms.ENCODING_STRENGTH_MD5, message));
-//		System.out.println("MD5 composite message: " + gen.encodeMessage(MACAlgorithms.ENCODING_STRENGTH_MD5, ccid, uuid, date));
+		System.out.println("MD5 full message: " + gen.encodeMessage(MACAlgorithms.ENCODING_STRENGTH_MD5, message2, isHex));
+		System.out.println("MD5 composite message: " + gen.encodeMessage(MACAlgorithms.ENCODING_STRENGTH_MD5, ccid, uuid, date, isHex));
 	}
 
 }

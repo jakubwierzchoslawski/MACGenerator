@@ -41,7 +41,7 @@ public class MACGenerator {
 	 * @param message
 	 * @return
 	 */
-	public String encodeMessage(String strength, String message) {
+	public String encodeMessage(String strength, String message, boolean isHex) {
 		String encodedMessage = null;
 		Mac mac;
 
@@ -54,7 +54,7 @@ public class MACGenerator {
 			SecretKeySpec secret_key;
 			//secret_key = new SecretKeySpec(this.HMAC_KEY.getBytes(MACConfiguration.HMAC_KEY_ENCODING), strength);
 			
-			secret_key = new SecretKeySpec( tokenize(this.HMAC_KEY,true), strength);
+			secret_key = new SecretKeySpec( tokenize(this.HMAC_KEY,isHex), strength);
 			mac.init(secret_key);
 			// Base64.encodeBase64String(sha256_HMAC.doFinal(data.getBytes(MACConfiguration.MESSAGE_ENCODING)));
 			encodedMessage = Hex.encodeHexString(mac.doFinal(message.getBytes(MACConfiguration.MESSAGE_ENCODING)));
@@ -82,8 +82,8 @@ public class MACGenerator {
 	 * @return
 	 * @throws Exception
 	 */
-	public String encodeMessage(String strength, String ccid, String uuid, String date) throws Exception {
-		return this.encodeMessage(strength, createMessage(ccid, uuid, date));
+	public String encodeMessage(String strength, String ccid, String uuid, String date, boolean isHex) throws Exception {
+		return this.encodeMessage(strength, createMessage(ccid, uuid, date), isHex);
 	}
 
 	/**
