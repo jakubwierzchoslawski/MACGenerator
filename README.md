@@ -1,5 +1,7 @@
 # Message Authentication Code generator
 
+It's not generic implementation rather it is CSi Web solution related.
+
 
 # To generate MAC two methods are avaliable:
 -	public String encodeMessage(String strength, String message) - generate  HMAC for any message
